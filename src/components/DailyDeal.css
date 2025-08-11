@@ -1,0 +1,77 @@
+.daily-card-container {
+  max-width: 1080px; /* عرض بزرگ‌تر روی پی‌سی */
+  margin: 30px auto;
+  padding: 20px;
+  border: 2px solid #87CEEB;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 6px 18px rgba(5, 60, 84, 0.3);
+  font-family: 'Vazirmatn', sans-serif;
+}
+
+.daily-card-title {
+  text-align: center;
+  color: #87CEEB;
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.daily-card-subtitle {
+  margin-bottom: 10px;
+  color: #333;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.dailydeal-images {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.dailydeal-images img {
+  width: 30%;
+  border-radius: 12px;
+  object-fit: cover;
+  height: 180px; /* ارتفاع 1.5 برابر (از 120px به 180px) */
+  min-width: 90px;
+}
+
+@media (max-width: 480px) {
+  .dailydeal-images {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .dailydeal-images img {
+    width: 100%;
+    height: auto;
+  }
+
+  .daily-card-container {
+    max-width: 95%;
+    padding: 15px;
+  }
+}
+
+.daily-card-description {
+  background-color: #e0f4ff;
+  padding: 14px;
+  border-radius: 12px;
+  color: #087ac8;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: right;    /* راست‌چین کردن متن */
+  direction: rtl;       /* جهت متن از راست به چپ */
+}
+
+
+.loading-text {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 40px;
+}

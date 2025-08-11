@@ -1,0 +1,62 @@
+/* src/App.css */
+
+body {
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 1.1rem; /* بزرگ‌تر از پیش‌فرض */
+  line-height: 1.8;
+  color: #333;
+}
+
+
+/* استایل لیست محصولات */
+.product-list {
+  display: flex; /* برای کنار هم قرار دادن کارت‌ها */
+  flex-wrap: wrap; /* کارت‌ها به خط جدید می‌روند اگر فضا پر شود */
+  gap: 20px; /* فاصله بین کارت‌ها */
+  justify-content: center; /* وسط‌چین کردن کارت‌ها */
+  padding: 20px;
+  
+}
+
+/* استایل برای هر کارت محصول */
+.product-card {
+  width: 300px; /* عرض ثابت برای کارت‌ها */
+  height: 400px; /* ارتفاع ثابت برای کارت‌ها */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  overflow: hidden;
+  transition: transform 0.2s; /* افکت شناور */
+}
+
+.product-card:hover {
+  transform: scale(1.05); /* افکت بزرگ‌شدن کارت هنگام هاور */
+}
+
+.product-card img {
+  width: 100%; /* عرض تصویر باید برابر با عرض کارت باشه */
+  height: 200px; /* تنظیم ارتفاع برای تصاویر */
+  object-fit: cover; /* تصویر به طور مناسب فیت می‌شود */
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* استایل برای موبایل‌ها یا صفحه‌های کوچک‌تر */
+@media (max-width: 768px) {
+  .product-list {
+    flex-direction: column; /* در موبایل‌ها کارت‌ها به صورت عمودی نمایش داده می‌شوند */
+    align-items: center; /* وسط‌چین کردن کارت‌ها */
+  }
+
+  .product-card {
+    width: 90%; /* عرض کارت‌ها در موبایل‌ها کاهش می‌یابد */
+    height: auto; /* ارتفاع کارت‌ها به طور خودکار تنظیم می‌شود */
+  }
+
+  .product-card img {
+    height: 150px; /* برای موبایل‌ها تصویر کوچکتر نمایش داده می‌شود */
+  }
+}
