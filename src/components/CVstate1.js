@@ -24,6 +24,7 @@ const portfolioItems = [
   },
 ];
 
+
 export default function CVstate1() {
   return (
     <>

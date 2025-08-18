@@ -4,18 +4,23 @@ import { Link } from 'react-router-dom';
 import './ProductCard.css';
 import { FaShoppingCart } from 'react-icons/fa';
 
-
-function ProductCard({ id, title, price, image, description, images, rating }) {
+function ProductCard({ id, title, prices, image, description, images, rating }) {
   return (
     <div className="product-card">
       <Link
-        to={`/product/${id}`} // ✅ استفاده از id
-        state={{ title, price, images, description, rating }}
+        to={`/product/${id}`}
+        state={{ title, prices, images, description, rating }}
         style={{ textDecoration: 'none', color: 'inherit' }}
       >
         <img src={image || "/rtyy.jpeg"} alt={title} />
         <h3>{title}</h3>
-        <p>{price} تومان</p>
+
+        {/* نمایش اولین قیمت موجود */}
+        {prices && prices.length > 0 ? (
+          <p>{prices[0].price} تومان</p>
+        ) : (
+          <p>قیمت موجود نیست</p>
+        )}
       </Link>
 
       <button>
