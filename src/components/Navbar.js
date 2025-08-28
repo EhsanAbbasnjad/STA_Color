@@ -4,10 +4,10 @@ import { AiFillHome } from 'react-icons/ai';
 import './Navbar.css';
 
 const productsDropdownItems = [
-  { label: 'بتونه نانو', path: '/batune-nano' },
-  { label: 'مادر رنگ', path: '/madar-rang' },
-  { label: 'رنگ دکوراتیو', path: '/rang-decorative' },
-  { label: 'رزین آببندی', path: '/rezin-abbandi' },
+  { label: 'رنگ نانو الاستومری', path: '/batune-nano' },
+  { label: 'عایق عای رطوبتی و حرارتی', path: '/madar-rang' },
+  { label: 'رنگ اکرلیک و نیمه پلاستیک', path: '/rang-decorative' },
+  { label: 'رزین های آببندی', path: '/rezin-abbandi' },
 ];
 
 function DropdownMenu({ items, isOpen, onClose }) {

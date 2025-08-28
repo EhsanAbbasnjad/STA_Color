@@ -1,0 +1,178 @@
+.diamond-card {
+  width: 300px;
+  padding: 20px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #87CEEB, #4682B4);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  font-family: "Arial", sans-serif;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* گوشه‌های درخشان بالا */
+.diamond-card::before,
+.diamond-card::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.7), transparent 70%);
+  animation: pulse 3s infinite ease-in-out;
+  z-index: 1;
+}
+.diamond-card::before { top: -10px; left: -10px; }
+.diamond-card::after  { top: -10px; right: -10px; }
+
+/* گوشه‌های درخشان پایین */
+.diamond-card .corner-glow {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.7), transparent 70%);
+  animation: pulse 3s infinite ease-in-out;
+  z-index: 1;
+}
+.diamond-card .corner-glow.bl { bottom: -10px; left: -10px; }
+.diamond-card .corner-glow.br { bottom: -10px; right: -10px; }
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50%      { opacity: 1;   transform: scale(1.3); }
+}
+
+/* اسلایدر */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  z-index: 2;
+}
+.slider-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+.slider-track img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+  cursor: zoom-in; /* کلیک = فول‌اسکرین */
+}
+
+/* دکمه‌های اسلایدر */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.45);
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 3;
+  transition: background 0.3s ease;
+}
+.prev:hover, .next:hover { background: rgba(0, 0, 0, 0.7); }
+.prev { left: 8px; }
+.next { right: 8px; }
+
+/* محتوا */
+.diamond-content { margin-top: 10px; z-index: 2; position: relative; }
+
+
+
+
+.desc-box {
+  margin-top: 8px;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* ===== فول‌اسکرین لایت‌باکس ===== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 15, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;          /* بالاتر از همه */
+}
+.lightbox-img {
+  max-width: 95vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  background: rgba(0,0,0,0.45);
+  border: none;
+  color: #fff;
+  font-size: 1.4rem;
+  padding: 8px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background 0.25s ease, transform 0.1s ease;
+}
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover { background: rgba(0,0,0,0.7); }
+.lightbox-close:active,
+.lightbox-prev:active,
+.lightbox-next:active { transform: scale(0.96); }
+
+.lightbox-close { top: 16px; right: 16px; }
+.lightbox-prev  { left: 16px;  top: 50%; transform: translateY(-50%); }
+.lightbox-next  { right: 16px; top: 50%; transform: translateY(-50%); }
+
+.lightbox-caption {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.35);
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+
+.slider-track {
+  display: flex;
+  width: calc(100% * var(--slide-count)); /* تعداد اسلاید * 100% */
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider-track img {
+  width: calc(100% / var(--slide-count)); /* هر تصویر به اندازه 1/تعداد کل */
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}

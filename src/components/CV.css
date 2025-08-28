@@ -1,0 +1,18 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* فاصله بین کارت‌ها */
+  padding: 40px;
+  max-width: 1200px; /* حداکثر عرض برای وسط‌چین شدن */
+  margin: 0 auto; /* وسط صفحه */
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* فاصله کمتر روی موبایل */
+  }
+}

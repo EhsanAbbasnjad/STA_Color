@@ -104,14 +104,18 @@
   list-style: none;
   padding: 8px 0;
   margin: 0;
-  width: 180px;
+  min-width: 220px;     /* ✅ حداقل عرض بیشتر */
+  width: max-content;   /* ✅ عرض به اندازه متن */
+  max-width: 300px;     /* ✅ نهایت عرض (اختیاری) */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
   transition: all 0.3s ease;
   z-index: 1000;
+  white-space: normal;  /* ✅ متن می‌تونه خط بشکنه */
 }
+
 
 .dropdown-menu.open {
   opacity: 1;

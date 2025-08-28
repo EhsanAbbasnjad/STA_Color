@@ -11,7 +11,7 @@ import ProjectSlider from "./components/ProjectSlider";
 import AboutSection from "./components/AboutSection";
 import AboutUs from "./components/AboutUs";
 import ContactUs from "./components/ContactUs";
-import CVstate1 from "./components/CVstate1";
+import CVstate1 from "./components/CVM";
 import BatuneNano from "./components/BatuneNano";
 import MadarRang from "./components/MadarRang";
 import RangDecorative from "./components/RangDecorative";
