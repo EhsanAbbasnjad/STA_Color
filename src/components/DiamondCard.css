@@ -10,6 +10,7 @@
   position: relative;
   overflow: hidden;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  font-family: 'Vazirmatn', sans-serif;
 }
 
 /* گوشه‌های درخشان بالا */

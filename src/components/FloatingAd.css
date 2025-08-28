@@ -16,6 +16,7 @@
   animation: slideDown 1s forwards;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   z-index: 999;
+  font-family: 'Vazirmatn', sans-serif;
 }
 
 .floating-ad img {

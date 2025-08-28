@@ -7,6 +7,7 @@
   max-width: 1200px; /* حداکثر عرض برای وسط‌چین شدن */
   margin: 0 auto; /* وسط صفحه */
   box-sizing: border-box;
+  font-family: 'Vazirmatn', sans-serif;
 }
 
 @media (max-width: 768px) {
