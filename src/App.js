@@ -22,7 +22,7 @@ function App() {
   const sampleProducts = [
     {
       id: 1,
-     title: "پوش رنگ اکرلیک  بنفش",
+     title: "پوش رنگ اکرلیک",
                     prices: [
     { option: "گالن", price: 6600000 },
     { option: "دبه", price: 16200000 },
